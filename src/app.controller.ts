@@ -126,4 +126,9 @@ export class AppController {
       return ResponseUtil.internalServerError(`Error al obtener el mensaje con id ${id}`);
     }
   }
+
+  @Get('health')
+  async checkDatabaseConnection() {
+    return await this.appService.checkDatabaseConnection();
+  }
 }

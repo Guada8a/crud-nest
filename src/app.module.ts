@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Mensaje } from './mensaje.entity';
+import { UsuariosModule } from './usuarios/usuarios.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { Mensaje } from './mensaje.entity';
       synchronize: true, // ¡Desactívalo en producción!
     }),
     TypeOrmModule.forFeature([Mensaje]),
+    UsuariosModule,
   ],
   controllers: [AppController],
   providers: [AppService],
